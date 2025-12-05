@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "595172733798",
+    "project_id": "opsw-manager",
+    "storage_bucket": "opsw-manager.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595172733798:android:5102d86166f451bf6d4ea7",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXEIqfyJR4aTYQXHP65xNYWmQI1wms5r4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

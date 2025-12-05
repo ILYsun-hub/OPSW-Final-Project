@@ -1,0 +1,129 @@
+# ============================
+# 🔥 Global ignores
+# ============================
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+
+# Logs / Temp
+*.log
+*.tmp
+*.temp
+
+# ============================
+# 🔥 Flutter / Dart
+# ============================
+
+# Flutter build outputs
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.dart_tool/
+pubspec.lock
+
+# Generated files
+*.arb.g.dart
+
+# Firebase CLI generated
+firebase.json
+firestore.indexes.json
+firestore.rules
+storage.rules
+
+# FlutterFire generated
+lib/firebase_options.dart
+
+# ============================
+# 🔥 Android-specific
+# ============================
+
+local.properties      # 중요: Android SDK 경로용 — 노출 금지!
+.gradle/
+captures/
+*.keystore
+*.jks
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# ============================
+# 🔥 iOS / macOS
+# ============================
+
+ios/Pods/
+ios/Flutter/Flutter.podspec
+ios/Flutter/flutter_export_environment.sh
+ios/Runner.xcworkspace/
+
+macos/Flutter/ephemeral/
+macos/Pods/
+
+# ============================
+# 🔥 Web
+# ============================
+
+web/.dart_tool/
+web/build/
+
+# ============================
+# 🔥 Python / FastAPI (백엔드)
+# ============================
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# Python build / cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# ============================
+# 🔥 Firebase Hosting / Emulator
+# ============================
+
+.firebase/
+firebase-debug.log
+
+# Emulator data
+emulators/
+
+# ============================
+# 🔥 Node / NPM (infra scripts 등)
+# ============================
+
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+
+# ============================
+# 🔥 Others
+# ============================
+
+# Keys / Credentials
+*.pem
+*.key
+*.crt
+*.p12
+*.password
+
+# Temp files
+*.swp
+*.swo
+*.bak
+
