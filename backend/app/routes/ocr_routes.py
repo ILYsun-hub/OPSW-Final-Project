@@ -3,7 +3,7 @@ from app.services.ocr_service import extract_text_from_image
 from app.utils.parser import parse_ocr_text
 from app.services.drug_enrichment import enrich_ocr_drugs
 
-# ⭐ 추가된 부분
+
 from app.services.ollama_service import analyze_ocr_text_with_llm
 
 router = APIRouter(prefix="/api/ocr", tags=["OCR"])

@@ -3,7 +3,7 @@
 import requests
 import json
 from app.services.ollama_prompts import build_drug_parse_prompt
-from app.utils.json_extractor import extract_json_from_text   # ⭐ 추가된 부분
+from app.utils.json_extractor import extract_json_from_text   
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "hf.co/MLP-KTLim/llama-3-Korean-Bllossom-8B-gguf-Q4_K_M"
