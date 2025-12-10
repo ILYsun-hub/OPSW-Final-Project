@@ -127,3 +127,4 @@ package-lock.json
 *.swo
 *.bak
 
+backend/app/core/google_vision_key.json
