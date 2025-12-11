@@ -1,0 +1,37 @@
+## 개요
+
+Firestore Rules 작성
+
+---
+
+## 변경 사항
+
+공공 약 정보(medications)
+-모든 사용자에게 읽기 허용
+-앱에서의 쓰기(추가·수정·삭제)는 전면 차단
+
+사용자(users) 컬렉션 권한 구조 정립
+-본인(Elder): 자신의 데이터 전체 읽기/쓰기 허용
+-보호자(Caregiver): 감독 대상 Elder의 데이터 읽기 허용
+
+users/{userId} 하위 컬렉션(intake_logs, prescriptions 등)
+-본인(Elder): 전체 읽기/쓰기
+-보호자(Caregiver): Elder 데이터 읽기 + 쓰기 가능
+
+독립 컬렉션(guardians, prescriptions, schedules 등)
+-로그인된 사용자라면 읽기/쓰기 허용
+-향후 강화 가능성을 염두에 두고 구조 설계
+
+공통 함수 추가
+-isSignedIn() → 로그인 여부 체크
+-isGuardianOf(elderId) → 보호자 관계 여부 체크
+
+루트 외 모든 경로는 명시적으로 허용되지 않는 이상 기본 차단
+
+---
+
+## 관련 이슈
+
+closes #32
+
+---
