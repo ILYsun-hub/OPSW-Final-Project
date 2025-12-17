@@ -11,7 +11,7 @@ class AppUser {
     required this.phone,
   });
 
-  factory AppUser.fromMap(String uid, Map<String, dynamic>? data) {
+  factory AppUser.fromDoc(String uid, Map<String, dynamic>? data) {
     final d = data ?? {};
     return AppUser(
       uid: uid,
