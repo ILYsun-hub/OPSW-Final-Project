@@ -4,9 +4,8 @@ load_dotenv()
 from fastapi import FastAPI
 
 from app.routes.ocr_routes import router as ocr_router
-from app.routes.alert_routes import router as alert_router
-from app.routes.guardian_routes import router as guardian_router
-# from app.routes.schedule_routes import router as schedule_router
+from app.routes.intake_routes import router as intake_router
+
 
 app = FastAPI(
     title="OPSW Backend",
@@ -16,6 +15,7 @@ app = FastAPI(
 
 # OCR + AI + Save
 app.include_router(ocr_router)
+app.include_router(intake_router)
 
 # 복약 알림
 app.include_router(alert_router)
