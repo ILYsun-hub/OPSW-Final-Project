@@ -3,6 +3,7 @@ load_dotenv()
 
 from fastapi import FastAPI
 
+from app.routes.medicine_routes import router as medicine_router
 from app.routes.ocr_routes import router as ocr_router
 from app.routes.alert_routes import router as alert_router
 from app.routes.guardian_routes import router as guardian_router
@@ -24,6 +25,8 @@ app.include_router(alert_router)
 app.include_router(guardian_router)
 
 # app.include_router(schedule_router)
+
+app.include_router(medicine_router)
 
 @app.get("/")
 def root():
