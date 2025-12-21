@@ -1,15 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
-import 'auth_screens.dart'; // ✅ 우리가 만든 AuthGate
+import 'screens/auth_gate.dart';
+import 'services/api_service.dart';
+import 'notifiers/auth_notifier.dart';
+import 'notifiers/data_notifier.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    debugPrint("Firebase 초기화 에러 (시연용으로 무시 가능): $e");
+  }
+  
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<ApiService>(create: (_) => ApiService()),
+        ChangeNotifierProvider<AuthNotifier>(
+          create: (context) => AuthNotifier(context.read<ApiService>()),
+        ),
+        ChangeNotifierProvider<DataNotifier>(
+          create: (context) => DataNotifier(
+            context.read<ApiService>(),
+            context.read<AuthNotifier>(),
+          ),
+        ),
+      ],
+      child: const MyApp(),
+    ),
   );
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,11 +46,14 @@ class MyApp extends StatelessWidget {
       title: '시니어 복약 관리',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF4F46E5),
+          brightness: Brightness.light,
+        ),
         useMaterial3: true,
+        fontFamily: 'Pretendard',
+        scaffoldBackgroundColor: const Color(0xFFF5F7FA),
       ),
-
-      // ✅ 여기만 변경
       home: const AuthGate(),
     );
   }
